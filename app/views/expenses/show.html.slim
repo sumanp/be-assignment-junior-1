@@ -1,0 +1,34 @@
+h1 Expense Details
+
+dl
+  dt Description
+  dd = @expense.description
+
+  dt Amount
+  dd = @expense.amount
+
+  dt Tax Rate
+  dd = @expense.tax_rate
+
+  dt Payer
+  dd = @expense.payer.name
+
+  dt Involved Friends
+  dd
+    ul
+      - @expense.users.each do |user|
+        li = user.name
+
+  dt Split Equally
+  dd = @expense.split_equally ? 'Yes' : 'No'
+
+  dt User Expenses
+  dd
+    - @expense.user_expenses.each do |user_expense|
+      p
+        | #{user_expense.user.name}, Amount: #{user_expense.amount}, Tax Amount: #{user_expense.tax_amount}, #{link_to 'Edit', edit_user_expense_path(user_expense)}
+      
+  dt Grand Total (Amount + Tax)
+  dd = @expense.grand_total
+= link_to 'Edit', edit_expense_path(@expense)
+= link_to 'Back', root_path

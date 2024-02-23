@@ -11,6 +11,10 @@ class Expense < ApplicationRecord
   before_save :calculate_user_expense_amounts, if: :split_equally?
   attribute :amount, :float
   
+  def grand_total
+    amount + user_expenses.sum(:tax_amount)
+  end
+
   private
 
   def calculate_user_expense_amounts
