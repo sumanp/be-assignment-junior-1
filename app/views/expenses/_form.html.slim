@@ -1,9 +1,9 @@
 = simple_form_for(@expense) do |f|
   = f.error_notification
-  = f.input :user_ids, collection: User.all, label: 'Involved', as: :select, input_html: { multiple: true, class: "form-select form-select-sm"}
-  = f.input :payer_id
-  = f.input :description
-  = f.input :amount
-  = f.input :tax_rate
-  = f.input :split_equally, as: :boolean
+  = f.input :user_ids, collection: User.all, label: 'Involved', as: :select, include_blank: false, input_html: { multiple: true, id: 'user-select', class: "dropdown"}
+  = f.collection_select :payer_id, User.all, :id, :name, { label: 'Payer' }, { class: "form-select form-select-sm" }
+  = f.input :description, input_html: { class: "form-control" }
+  = f.input :amount, input_html: { class: "form-control" }
+  = f.input :tax_rate, input_html: { class: "form-control" }
+  = f.input :split_equally, as: :boolean, input_html: { class: "form-check-input" }
   = f.button :submit, class: "btn btn-primary"

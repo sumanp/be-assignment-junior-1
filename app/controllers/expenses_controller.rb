@@ -2,7 +2,7 @@ class ExpensesController < ApplicationController
 
   def create
     @expense = Expense.new(expense_params)
-    if @expense.save!
+    if @expense.save
       flash[:notice] = "Expense created successfully."
       redirect_to root_url
     else
