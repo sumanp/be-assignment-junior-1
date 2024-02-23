@@ -4,7 +4,7 @@ class CreateExpenses < ActiveRecord::Migration[6.1]
       t.string :description
       t.decimal :amount, :precision => 8, :scale => 2
       t.integer :payer_id
-      t.boolean :split_equally
+      t.boolean :split_equally, default: false
       t.decimal :tax_rate, :precision => 5, :scale => 2
 
       t.timestamps

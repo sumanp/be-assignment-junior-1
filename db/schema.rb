@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_06_083940) do
+ActiveRecord::Schema.define(version: 2024_02_23_140922) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "expenses", force: :cascade do |t|
+    t.string "description"
+    t.decimal "amount", precision: 8, scale: 2
+    t.integer "payer_id"
+    t.boolean "split_equally", default: false
+    t.decimal "tax_rate", precision: 5, scale: 2
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["payer_id"], name: "index_expenses_on_payer_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
