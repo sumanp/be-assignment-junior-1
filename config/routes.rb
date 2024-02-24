@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   root to: "static#dashboard"
   get 'people/:id', to: 'static#person', as: 'people'
-  resources :expenses, only: [:create, :edit, :update, :show]
+  resources :expenses, except: [:index]
   resources :user_expenses, only: [:edit, :update]
 end

@@ -20,6 +20,7 @@
             .you-details
               p you lent anbu
               p = amount_lent(expense)
-          button.remove-btn ❌
+          = link_to "❌", expense_path(expense), method: :delete, data: { confirm: "Are you sure?" }, class: "remove-btn"
+
 
 = render 'new_expense_modal'

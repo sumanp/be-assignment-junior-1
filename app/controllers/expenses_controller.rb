@@ -1,5 +1,5 @@
 class ExpensesController < ApplicationController
-  before_action :set_expense, only: %i[ show edit update ]
+  before_action :set_expense, only: %i[ show edit update destroy]
 
   def show
   end
@@ -16,6 +16,12 @@ class ExpensesController < ApplicationController
       flash[:alert] = "Failed to create expense."
       render template: 'static/dashboard'
     end
+  end
+
+  def destroy
+    @expense.destroy
+    flash[:notice] = "Expense successfully removed"
+    redirect_back(fallback_location: root_path)
   end
 
   private
