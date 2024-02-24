@@ -1,9 +1,6 @@
 .dashboard-wrapper
   aside.side-bar-area
-    .friends-list
-      p.friends-list-header FRIENDS
-      a.friend-name anbu
-      a.friend-name barath
+    = render 'friend_list', friends: @friends
   .main-area
     .top-bar
       h1.top-bar-title Dashboard
@@ -11,39 +8,16 @@
         button.btn.btn-primary type="button"  Add an expense
         button.btn.btn-secondary type="button"  Settle up
     .expenses-list
-      .expense-item
-        .item-lhs
-          p SEP 30
-          p Hello
-        .item-rhs
-          .you-details
-            p you paid
-            p $23.00
-          .you-details
-            p you lent anbu
-            p $11.50
-        button.remove-btn ❌
-      .expense-item
-        .item-lhs
-          p SEP 30
-          p Hello
-        .item-rhs
-          .you-details
-            p you paid
-            p $23.00
-          .you-details
-            p you lent anbu
-            p $11.50
-        button.remove-btn ❌
-      .expense-item
-        .item-lhs
-          p SEP 30
-          p Hello
-        .item-rhs
-          .you-details
-            p you paid
-            p $23.00
-          .you-details
-            p you lent anbu
-            p $11.50
-        button.remove-btn ❌
+      - @expenses.each do |expense|
+        .expense-item
+          .item-lhs
+            p = expense.created_at.strftime("%d %b")
+            p = expense.description
+          .item-rhs
+            .you-details
+              p you paid
+              p = expense.amount
+            .you-details
+              p you lent anbu
+              p = amount_lent(expense)
+          button.remove-btn ❌

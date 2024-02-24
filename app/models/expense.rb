@@ -16,6 +16,10 @@ class Expense < ApplicationRecord
     amount +  (amount * (tax_rate / 100))
   end
 
+  def payer_record
+    UserExpense.find_by(user_id: self.payer_id, expense_id: self.id)
+  end
+
   private
 
   def calculate_user_expense_amounts
