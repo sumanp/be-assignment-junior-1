@@ -5,7 +5,7 @@
     .top-bar
       h1.top-bar-title Dashboard
       .top-bar-actions
-        button.btn.btn-primary type="button"  Add an expense
+        button.btn.btn-primary type="button" data-bs-toggle="modal" data-bs-target="#expenseModal"  Add an expense
         button.btn.btn-secondary type="button"  Settle up
     .expenses-list
       - @expenses.each do |expense|
@@ -21,3 +21,5 @@
               p you lent anbu
               p = amount_lent(expense)
           button.remove-btn ❌
+
+= render 'new_expense_modal'

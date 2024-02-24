@@ -52,13 +52,5 @@
             .user-empty-state
               p
                 | Nobody owes you anything!
-#expenseModal.modal.fade aria-hidden="true" aria-labelledby="expenseModalLabel" tabindex="-1" 
-  .modal-dialog.modal-lg
-    .modal-content
-      .modal-header
-        h5#expenseModalLabel.modal-title Add an expense
-        button.btn-close aria-label="Close" data-bs-dismiss="modal" type="button" 
-      .modal-body
-        = render 'expenses/form'
-      .modal-footer
-        button.btn.btn-secondary data-bs-dismiss="modal" type="button"  Close
+= render 'new_expense_modal'
+

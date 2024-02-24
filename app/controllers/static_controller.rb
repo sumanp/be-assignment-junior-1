@@ -1,6 +1,5 @@
 class StaticController < ApplicationController
   def dashboard
-    @expense = Expense.new
     @friends = User.all # TODO: This will be paginated
   end
 
