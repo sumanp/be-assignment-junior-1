@@ -15,10 +15,10 @@
             p = expense.description
           .item-rhs
             .you-details
-              p you paid
+              p paid
               p = expense.amount
             .you-details
-              p you lent anbu
+              p lent
               p = amount_lent(expense)
           = link_to "❌", expense_path(expense), method: :delete, data: { confirm: "Are you sure?" }, class: "remove-btn"
 
