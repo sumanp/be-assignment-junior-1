@@ -15,6 +15,8 @@ class UserExpense < ApplicationRecord
     expense.amount - total_user_expense_amount
   end
 
+  private
+
   def calculate_individual_tax
     self.tax_amount = amount * ( self.expense.tax_rate / 100)
   end

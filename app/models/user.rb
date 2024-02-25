@@ -25,7 +25,7 @@ class User < ApplicationRecord
     user_expenses.where.not(expense_id: expense_ids_to_exclude)
   end
 
-  def user_expense_owed
+  def user_expense_owed # expense paid by payer without payers share
     expense_ids_to_include = payer_expenses.pluck(:id)
     UserExpense.where(expense_id: expense_ids_to_include).where.not(user_id: self.id)
   end
