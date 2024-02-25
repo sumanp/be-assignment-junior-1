@@ -6,7 +6,7 @@
 
 ## Assumptions
 - It is assumed that each expense is a single line item
-- It is assumed that on `people/:id` "List Friend expenses", expenses made by the friend (where the person was payer) is listed along with how much as paid and how much was lent by the person
+- It is assumed that on `people/:id` "List Friend expenses", expenses made by the friend (where the person was payer) is listed along with how much was paid and how much was lent by the person
 
 ## Possible improvements
 - Groups feature can be introduced to the app similar to Splitwise where friends to the groups can be added
