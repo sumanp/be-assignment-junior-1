@@ -20,11 +20,11 @@ group :development, :test do
   gem 'rspec-rails', '~> 6.1', '>= 6.1.1'
   gem 'factory_bot_rails', '~> 6.4', '>= 6.4.3'
   gem 'shoulda-matchers', '~> 5.3'
+  gem 'faker', '~> 3.2', '>= 3.2.3'
 end
 
 group :development do
   gem 'fabrication'
-  gem 'faker'
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'spring'

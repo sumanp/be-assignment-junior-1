@@ -5,7 +5,8 @@ require_relative '../config/environment'
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
-require 'factory_bot_rails'
+require_relative 'support/factory_bot'
+require_relative 'support/chrome'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -69,6 +70,3 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
-
-FactoryBot.definition_file_paths = %w{./factories ./spec/factories}
-FactoryBot.find_definitions
