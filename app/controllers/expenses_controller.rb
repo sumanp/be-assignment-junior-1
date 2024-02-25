@@ -11,7 +11,7 @@ class ExpensesController < ApplicationController
       redirect_to expense_url(@expense)
     else
       flash[:alert] = "Failed to create expense."
-      render template: 'static/dashboard'
+      redirect_to root_path
     end
   end
 
