@@ -11,7 +11,7 @@ class Expense < ApplicationRecord
   after_save :include_payer_in_expenses
   after_save :calculate_user_expense_amounts, if: :split_equally?
   attribute :amount, :float
-  
+
   def grand_total
     amount +  (amount * (tax_rate / 100))
   end

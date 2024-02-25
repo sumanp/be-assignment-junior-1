@@ -1,11 +1,17 @@
 class StaticController < ApplicationController
+  before_action :set_friends
+
   def dashboard
-    @friends = User.all # TODO: This will be paginated
   end
 
   def person
     user = User.find(params[:id])
     @expenses = user.payer_expenses  # TODO: This will be paginated as well
-    @friends = User.all # TODO: This will be paginated
+  end
+
+  private
+
+  def set_friends
+    @friends = User.where.not(id: current_user.id) # TODO: This will be paginated
   end
 end

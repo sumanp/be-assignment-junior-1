@@ -33,7 +33,7 @@
                   p
                     | #{user_expense.expense.payer.name}
                   p 
-                    | you owe $#{user_expense.amount}
+                    | you owe $#{user_expense.amount + user_expense.tax_amount}
           - else
             p
               | Hurray! you don't owe anything
@@ -47,7 +47,7 @@
                 .user-info
                   p
                     | #{user_expense.user.name}
-                  p owes you #{user_expense.amount}
+                  p owes you #{user_expense.amount + user_expense.tax_amount}
           - else
             .user-empty-state
               p
