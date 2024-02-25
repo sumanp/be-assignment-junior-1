@@ -16,11 +16,9 @@
           .item-rhs
             .you-details
               p paid
-              p = expense.amount
+              p = expense.grand_total
             .you-details
               p lent
               p = amount_lent(expense)
-          = link_to "❌", expense_path(expense), method: :delete, data: { confirm: "Are you sure?" }, class: "remove-btn"
-
 
 = render 'new_expense_modal'
