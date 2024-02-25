@@ -10,9 +10,11 @@
 
 ## Possible improvements
 - Groups feature can be introduced to the app similar to Splitwise where friends can be added to the group.
+- Multi-select js library can be integrated on drop-down multi select in the form.
 - A single page form can be built with stimulusJS to create expense. At the moment the create form is multi-part, where Expense is created first and then friends share can be edited.
 
 *Note: Bonus section was not attempted due to time constraints.*
+*Excuse my frontend skills, I'm a backend heavy guy*
 
 
 ______________________________________________________________________________________________________
