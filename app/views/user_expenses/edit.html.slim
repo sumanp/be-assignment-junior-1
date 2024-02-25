@@ -7,3 +7,4 @@ h1 Edit User Expense
   = f.input :amount
 
   = f.button :submit, 'Update', class: 'btn btn-primary'
+  = link_to 'Back', expense_path(@user_expense.expense)
