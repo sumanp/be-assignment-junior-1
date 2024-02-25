@@ -7,7 +7,7 @@ class ExpensesController < ApplicationController
   def create
     @expense = Expense.new(expense_params)
     if @expense.save
-      flash[:notice] = "Expense created successfully."
+      flash[:notice] = "Success! Please adjust the contribution amount"
       redirect_to expense_url(@expense)
     else
       flash[:alert] = "Failed to create expense."
