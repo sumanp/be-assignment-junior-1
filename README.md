@@ -5,14 +5,14 @@
 - Run server `rails s`
 
 ## Assumptions
-- It is assumed that each expense is a single line item
-- It is assumed that on `people/:id` "List Friend expenses", expenses made by the friend (where the person was payer) is listed along with how much was paid and how much was lent by the person
+- It is assumed that each expense is a single line item.
+- It is assumed that on `people/:id` "List Friend expenses", expenses made by the friend (where the person was payer) is listed along with how much was paid and how much was lent by the person.
 
 ## Possible improvements
-- Groups feature can be introduced to the app similar to Splitwise where friends to the groups can be added
+- Groups feature can be introduced to the app similar to Splitwise where friends can be added to the group.
 - A single page form can be built with stimulusJS to create expense. At the moment the create form is multi-part, where Expense is created first and then friends share can be edited.
 
-*Note: Bonus section was not attempted due to time constraints*
+*Note: Bonus section was not attempted due to time constraints.*
 
 
 ______________________________________________________________________________________________________
