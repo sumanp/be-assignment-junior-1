@@ -3,7 +3,7 @@ h1 Edit User Expense
 = simple_form_for @user_expense do |f|
   = f.error_notification
   p
-    | Amount remaining to adjust: #{@user_expense.adjust_amount}
+    | Amount remaining to adjust: #{(@user_expense.adjust_amount).round(2)}
   = f.input :amount
 
   = f.button :submit, 'Update', class: 'btn btn-primary'
