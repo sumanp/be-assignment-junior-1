@@ -14,7 +14,7 @@
 - A single page form can be built with stimulusJS to create expense. At the moment the create form is multi-part, where Expense is created first and then friends share can be edited.
 
 *Note: Bonus section was not attempted due to time constraints.*
-*Excuse my frontend skills, I'm a backend heavy guy*
+*PS: I'm a backend heavy guy, please excuse my okayish frontend work*
 
 
 ______________________________________________________________________________________________________
