@@ -27,13 +27,14 @@
           h2.detail-title you owe
           - if current_user.user_expense_you_owe.present?
             - current_user.user_expense_you_owe.each do |user_expense|
-              .user-detail
-                img.user-img alt="profile" src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" /
-                .user-info
-                  p
-                    | #{user_expense.expense.payer.name}
-                  p 
-                    | you owe $#{user_expense.amount + user_expense.tax_amount}
+              = link_to expense_path(user_expense.expense), class: "no-decoration"
+                .user-detail
+                  img.user-img alt="profile" src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" /
+                  .user-info
+                    p
+                      | #{user_expense.expense.payer.name}
+                    p 
+                      | you owe $#{user_expense.amount + user_expense.tax_amount}
           - else
             p
               | Hurray! you don't owe anything
@@ -42,12 +43,13 @@
           h2.detail-title you are owed
           - if current_user.user_expense_owed.present?
             - current_user.user_expense_owed.each do |user_expense|
-              .user-detail
-                img.user-img alt="profile" src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" /
-                .user-info
-                  p
-                    | #{user_expense.user.name}
-                  p owes you #{user_expense.amount + user_expense.tax_amount}
+              = link_to expense_path(user_expense.expense), class: "no-decoration"
+                .user-detail
+                  img.user-img alt="profile" src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" /
+                  .user-info
+                    p
+                      | #{user_expense.user.name}
+                    p owes you #{user_expense.amount + user_expense.tax_amount}
           - else
             .user-empty-state
               p

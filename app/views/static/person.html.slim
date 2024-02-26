@@ -9,16 +9,17 @@
         button.btn.btn-secondary type="button"  Settle up
     .expenses-list
       - @expenses.each do |expense|
-        .expense-item
-          .item-lhs
-            p = expense.created_at.strftime("%d %b")
-            p = expense.description
-          .item-rhs
-            .you-details
-              p paid
-              p = expense.grand_total
-            .you-details
-              p lent
-              p = amount_lent(expense)
+        = link_to expense_path(expense), class: "no-decoration"
+          .expense-item
+            .item-lhs
+              p = expense.created_at.strftime("%d %b")
+              p = expense.description
+            .item-rhs
+              .you-details
+                p paid
+                p = expense.grand_total
+              .you-details
+                p lent
+                p = amount_lent(expense)
 
 = render 'new_expense_modal'

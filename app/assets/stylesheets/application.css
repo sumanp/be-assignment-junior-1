@@ -19,3 +19,8 @@
  .container {
   padding-top: 20px;
  }
+
+ a.no-decoration {
+  color: inherit;
+  text-decoration: none;
+}
