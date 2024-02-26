@@ -9,6 +9,7 @@
 - It is assumed that on `people/:id` "List Friend expenses", expenses made by the friend (where the person was payer) is listed along with how much was paid and how much was lent by the person.
 
 ## Possible improvements
+- Proper authorisation can be implemented for expense edit, delete.
 - Groups feature can be introduced to the app similar to Splitwise where friends can be added to the group.
 - Multi-select js library can be integrated on drop-down multi select in the form.
 - A single page form can be built with stimulusJS to create expense. At the moment the create form is multi-part, where Expense is created first and then friends share can be edited.
