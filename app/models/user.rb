@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_many :payer_expenses, class_name: 'Expense', foreign_key: 'payer_id', dependent: :destroy
   has_many :user_expenses, dependent: :destroy
-  has_many :expenses, through: :user_expenses
+  has_many :expenses, through: :user_expenses, dependent: :destroy
 
   def total_amount_owed
     (user_expense_owed.sum(:amount) + user_expense_owed.sum(:tax_amount)).round(2)
