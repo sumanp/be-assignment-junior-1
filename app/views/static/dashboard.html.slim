@@ -25,7 +25,7 @@
       .dashboard-detail
         .detail-block
           h2.detail-title you owe
-          - if current_user.user_expense_you_owe
+          - if current_user.user_expense_you_owe.present?
             - current_user.user_expense_you_owe.each do |user_expense|
               .user-detail
                 img.user-img alt="profile" src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" /
